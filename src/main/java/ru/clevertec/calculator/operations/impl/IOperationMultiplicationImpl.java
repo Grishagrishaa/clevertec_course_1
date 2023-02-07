@@ -1,6 +1,6 @@
 package ru.clevertec.calculator.operations.impl;
 
-import org.example.calculator.operations.api.IOperation;
+import ru.clevertec.calculator.operations.api.IOperation;
 
 public class IOperationMultiplicationImpl implements IOperation {
     @Override
