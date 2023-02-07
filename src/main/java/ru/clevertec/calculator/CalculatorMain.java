@@ -3,6 +3,7 @@ package ru.clevertec.calculator;
 
 import ru.clevertec.calculator.service.ArabicCalcs;
 import ru.clevertec.calculator.service.Calculation;
+import ru.clevertec.calculator.service.RomanCalcs;
 import ru.clevertec.calculator.util.NumberIdentifier;
 
 import java.util.Arrays;
@@ -21,7 +22,7 @@ public class CalculatorMain {
             if(isArabicOperands(operands)){
                 calculator = new ArabicCalcs();
             }else if(isRomanOperands(operands)){
-                throw new UnsupportedOperationException();//TODO MAKE IMPLEMENTATION
+                calculator = new RomanCalcs();
             }else {
                 throw new IllegalArgumentException();
             }
@@ -52,6 +53,7 @@ public class CalculatorMain {
     }
 
     private static boolean isRomanOperands(String[] operands) {
-        throw new UnsupportedOperationException();//TODO MAKE IMPLEMENTATION
+        return Arrays.stream(operands)
+                .allMatch(NumberIdentifier::isRomanNumber);
     }
 }

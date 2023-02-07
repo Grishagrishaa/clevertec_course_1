@@ -4,13 +4,13 @@ import java.util.regex.Pattern;
 
 public class NumberIdentifier {
     private static final String arabicPattern = "\\d+";
-    private static final String romanPattern = "";//TODO INSERT PATTERN
+    private static final String romanPattern = "^[MDCLXVI]+$";
 
     private NumberIdentifier() {
     }
 
     public static boolean isRomanNumber(String number){
-        throw new UnsupportedOperationException();//TODO MAKE IMPLEMENTATION
+        return Pattern.matches(romanPattern, number);
     }
 
     public static boolean isArabicNumber(String number){
