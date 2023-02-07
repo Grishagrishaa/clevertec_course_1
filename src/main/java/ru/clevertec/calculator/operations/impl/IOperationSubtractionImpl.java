@@ -8,7 +8,7 @@ public class IOperationSubtractionImpl implements IOperation {
     public int execute(double a, double b) {
         int result = (int) (a - b);
         if(result < 0){
-            System.out.println("Неположительный результат");
+            System.out.println("Неположительный результат выражения");
             System.exit(0);
         }
         return result;
