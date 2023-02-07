@@ -1,8 +1,11 @@
 package ru.clevertec.calculator;
 
 
+import ru.clevertec.calculator.service.ArabicCalcs;
 import ru.clevertec.calculator.service.Calculation;
+import ru.clevertec.calculator.util.NumberIdentifier;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CalculatorMain {
@@ -16,7 +19,7 @@ public class CalculatorMain {
             String[] operands = {expression[0], expression[2]};
 
             if(isArabicOperands(operands)){
-                throw new UnsupportedOperationException();//TODO MAKE IMPLEMENTATION
+                calculator = new ArabicCalcs();
             }else if(isRomanOperands(operands)){
                 throw new UnsupportedOperationException();//TODO MAKE IMPLEMENTATION
             }else {
@@ -44,7 +47,8 @@ public class CalculatorMain {
     }
 
     private static boolean isArabicOperands(String[] operands) {
-        throw new UnsupportedOperationException();//TODO MAKE IMPLEMENTATION
+        return Arrays.stream(operands)
+                .allMatch(NumberIdentifier::isArabicNumber);
     }
 
     private static boolean isRomanOperands(String[] operands) {
