@@ -1,8 +1,6 @@
-package org.example.calculator.operations.impl;
+package ru.clevertec.calculator.operations.impl;
 
 import org.example.calculator.operations.api.IOperation;
-
-import java.util.concurrent.LinkedBlockingDeque;
 
 public class IOperationDivisionImpl implements IOperation {
     @Override
